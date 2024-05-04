@@ -235,5 +235,17 @@ namespace medical_center_managment
             // Optionally, hide the current form if you don't need it anymore
             Visible = false;
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            PharmacyPayment PharmacyPayment = new PharmacyPayment();
+
+            // Display the target form
+            PharmacyPayment.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
     }
 }
