@@ -116,6 +116,11 @@ namespace medical_center_managment
                     cmd.CommandText = "SELECT * FROM Appoinments WHERE AppoinmentNumber =@appoinmentnumber OR PatientID = @patientid";
                     cmd.Parameters.AddWithValue("@appoinmentnumber", apponumbertb.Text.Trim());
                     cmd.Parameters.AddWithValue("@patientid", PatientIDtb.Text.Trim());
+                    cmd.ExecuteNonQuery();
+                    DataTable dataTable = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable;
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {

@@ -120,6 +120,11 @@ namespace medical_center_managment
                     cmd.CommandText = "SELECT * FROM Doctar WHERE DoctarID = @doctorid OR FirstName = @firstname";
                     cmd.Parameters.AddWithValue("@doctorid", doctorTB.Text.Trim());
                     cmd.Parameters.AddWithValue("@firstname", firstTB.Text.Trim());
+                    cmd.ExecuteNonQuery();
+                    DataTable dataTable = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable;
 
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
