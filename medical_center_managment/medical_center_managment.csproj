@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,6 +55,24 @@
     <Compile Include="DoctarDetails.Designer.cs">
       <DependentUpon>DoctarDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppoinmentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppoinmentDetails.Designer.cs">
+      <DependentUpon>AppoinmentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientHistoryDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientHistoryDetails.Designer.cs">
+      <DependentUpon>PatientHistoryDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentDetails.Designer.cs">
+      <DependentUpon>PaymentDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParentDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,11 +81,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppoinmentDetails.resx">
+      <DependentUpon>AppoinmentDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DoctarDetails.resx">
       <DependentUpon>DoctarDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParentDetails.resx">
       <DependentUpon>ParentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientHistoryDetails.resx">
+      <DependentUpon>PatientHistoryDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentDetails.resx">
+      <DependentUpon>PaymentDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

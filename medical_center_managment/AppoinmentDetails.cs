@@ -11,17 +11,12 @@ using System.Windows.Forms;
 
 namespace medical_center_managment
 {
-    public partial class ParentDetails : Form
+    public partial class AppoinmentDetails : Form
     {
         string connectionString = @"Data Source=LAPTOP-4VMD8P7I;Initial Catalog=medical_center;Integrated Security=True;";
-        public ParentDetails()
+        public AppoinmentDetails()
         {
             InitializeComponent();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,22 +26,21 @@ namespace medical_center_managment
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    SqlCommand sqlCmd = new SqlCommand("insertParentData", sqlCon);
-                    sqlCmd.CommandType = CommandType.StoredProcedure;
-                    sqlCmd.Parameters.AddWithValue("@patientid", PatientIDtb.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@firstname", Fnametb.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@secondname", Snametb.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@patientaddress", Paddresstb.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@age", Agetb.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@gender", Gendertb.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@patientstatus", Statustb.Text.Trim());
+                    SqlCommand sqlCmd = new SqlCommand("insertAppoinment", sqlCon);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;                
+                    sqlCmd.Parameters.AddWithValue("@appoinmentnumber", apponumbertb.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@appoinmenttime", appotimetb.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@appoinmentdate", appodatetb.Text.Trim());
+                   sqlCmd.Parameters.AddWithValue("@patientid", PatientIDtb.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@doctorid", doctorTB.Text.Trim());
                     sqlCmd.ExecuteNonQuery();
                     display_data();
+                    apponumbertb.Text = "";
                     PatientIDtb.Text = "";
-                    Fnametb.Text = "";
                     MessageBox.Show("Register is successfull !");
                     Clear();
                 }
+
             }
             catch (Exception ex)
             {
@@ -56,12 +50,7 @@ namespace medical_center_managment
         }
         void Clear()
         {
-            PatientIDtb.Text = Fnametb.Text = Snametb.Text = Paddresstb.Text = Agetb.Text = Gendertb.Text = Statustb.Text = "";
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            apponumbertb.Text = appotimetb.Text = appodatetb.Text = PatientIDtb.Text = doctorTB.Text =  "";
         }
         public void display_data()
         {
@@ -72,7 +61,7 @@ namespace medical_center_managment
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "select * from Patient";
+                    cmd.CommandText = "select * from Appoinments";
                     cmd.ExecuteNonQuery();
                     DataTable dataTable = new DataTable();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -86,12 +75,6 @@ namespace medical_center_managment
             }
         }
 
-
-        private void ParentDetails_Load(object sender, EventArgs e)
-        {
-            display_data();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             try
@@ -101,8 +84,7 @@ namespace medical_center_managment
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "DELETE FROM Patient WHERE PatientID = '" + PatientIDtb.Text + "'";
-
+                    cmd.CommandText = "DELETE FROM Appoinments WHERE AppoinmentNumber = '" + apponumbertb.Text + "'";
                     cmd.ExecuteNonQuery();
                     connectionString.Clone();
                     display_data();
@@ -117,6 +99,11 @@ namespace medical_center_managment
             }
         }
 
+        private void AppoinmentDetails_Load(object sender, EventArgs e)
+        {
+            display_data();
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
             try
@@ -126,34 +113,21 @@ namespace medical_center_managment
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "SELECT * FROM Patient WHERE PatientID = @patientid OR FirstName = @firstname";
+                    cmd.CommandText = "SELECT * FROM Appoinments WHERE AppoinmentNumber =@appoinmentnumber OR PatientID = @patientid";
+                    cmd.Parameters.AddWithValue("@appoinmentnumber", apponumbertb.Text.Trim());
                     cmd.Parameters.AddWithValue("@patientid", PatientIDtb.Text.Trim());
-                    cmd.Parameters.AddWithValue("@firstname", Fnametb.Text.Trim());
+                    cmd.ExecuteNonQuery();
 
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        PatientIDtb.Text = reader["PatientID"].ToString();
-                        Fnametb.Text = reader["FirstName"].ToString();
-                        Snametb.Text = reader["SecondName"].ToString();
-                        Paddresstb.Text = reader["PatientAddress"].ToString();
-                        Agetb.Text = reader["Age"].ToString();
-                        Gendertb.Text = reader["Gender"].ToString();
-                        Statustb.Text = reader["PatientStatus"].ToString();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No matching records found.");
-                    }
-
-                    reader.Close();
+                    DataTable dataTable = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -165,14 +139,13 @@ namespace medical_center_managment
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "UPDATE Patient SET FirstName = @firstname, SecondName = @secondname, PatientAddress = @patientaddress, Age = @age, Gender = @gender, PatientStatus = @patientstatus WHERE PatientID = @patientid";
+                    cmd.CommandText = "UPDATE Appoinments SET AppoinmentNumber = @appoinmentnumber, AppoinmentTime = @appoinmenttime, AppoinmentDate =@appoinmentdate, PatientID = @patientid, DoctarID = @doctorid";
+                    cmd.Parameters.AddWithValue("@appoinmentnumber", apponumbertb.Text.Trim());
+                    cmd.Parameters.AddWithValue("@appoinmenttime", appotimetb.Text.Trim());
+                    cmd.Parameters.AddWithValue("@appoinmentdate", appodatetb.Text.Trim());
                     cmd.Parameters.AddWithValue("@patientid", PatientIDtb.Text.Trim());
-                    cmd.Parameters.AddWithValue("@firstname", Fnametb.Text.Trim());
-                    cmd.Parameters.AddWithValue("@secondname", Snametb.Text.Trim());
-                    cmd.Parameters.AddWithValue("@patientaddress", Paddresstb.Text.Trim());
-                    cmd.Parameters.AddWithValue("@age", Agetb.Text.Trim());
-                    cmd.Parameters.AddWithValue("@gender", Gendertb.Text.Trim());
-                    cmd.Parameters.AddWithValue("@patientstatus", Statustb.Text.Trim());
+                    cmd.Parameters.AddWithValue("@doctorid", doctorTB.Text.Trim());
+
                     cmd.ExecuteNonQuery();
                     display_data();
                     MessageBox.Show("Update is successful!");
@@ -185,7 +158,7 @@ namespace medical_center_managment
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
             // Create an instance of the target form
             DoctarDetails DoctarDetails = new DoctarDetails();
@@ -195,7 +168,6 @@ namespace medical_center_managment
 
             // Optionally, hide the current form if you don't need it anymore
             Visible = false;
-
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -210,7 +182,7 @@ namespace medical_center_managment
             Visible = false;
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
             // Create an instance of the target form
             AppoinmentDetails AppoinmentDetails = new AppoinmentDetails();
@@ -222,7 +194,7 @@ namespace medical_center_managment
             Visible = false;
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
             // Create an instance of the target form
             PatientHistoryDetails PatientHistoryDetails = new PatientHistoryDetails();

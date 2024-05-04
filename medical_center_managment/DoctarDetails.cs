@@ -36,6 +36,9 @@ namespace medical_center_managment
                     sqlCmd.Parameters.AddWithValue("@specialization", specialTB.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@dotortype", typeTB.Text.Trim());
                     sqlCmd.ExecuteNonQuery();
+                    display_data();
+                    doctorTB.Text = "";
+                    firstTB.Text = "";
                     MessageBox.Show("Register is successfull !");
                     Clear();
                 }
@@ -50,6 +53,175 @@ namespace medical_center_managment
         void Clear()
         {
             doctorTB.Text = firstTB.Text = secondTB.Text = hospitalTB.Text = emailTB.Text = specialTB.Text = typeTB.Text = "";
+        }
+
+        public void display_data()
+        {
+            try
+            {
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlCommand cmd = sqlCon.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "select * from Doctar";
+                    cmd.ExecuteNonQuery();
+                    DataTable dataTable = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        private void DoctarDetails_Load(object sender, EventArgs e)
+        {
+            display_data();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlCommand cmd = sqlCon.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "DELETE FROM Doctar WHERE DoctarID = '" + doctorTB.Text + "'";
+
+                    cmd.ExecuteNonQuery();
+                    connectionString.Clone();
+                    display_data();
+                    MessageBox.Show("Delect is succesfull !");
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlCommand cmd = sqlCon.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "SELECT * FROM Doctar WHERE DoctarID = @doctorid OR FirstName = @firstname";
+                    cmd.Parameters.AddWithValue("@doctorid", doctorTB.Text.Trim());
+                    cmd.Parameters.AddWithValue("@firstname", firstTB.Text.Trim());
+                    cmd.ExecuteNonQuery();
+
+                    DataTable dataTable = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlCommand cmd = sqlCon.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "UPDATE Doctar SET FirstName = @firstname, SecondName = @secondname, HospitalName = @hospital, Email = @email, Specialization = @specialization, DoctarType = @dotortype  WHERE DoctarID = @doctorid";
+                    cmd.Parameters.AddWithValue("@doctorid", doctorTB.Text.Trim());
+                    cmd.Parameters.AddWithValue("@firstname", firstTB.Text.Trim());
+                    cmd.Parameters.AddWithValue("@secondname", secondTB.Text.Trim());
+                    cmd.Parameters.AddWithValue("@hospital", hospitalTB.Text.Trim());
+                    cmd.Parameters.AddWithValue("@email", emailTB.Text.Trim());
+                    cmd.Parameters.AddWithValue("@specialization", specialTB.Text.Trim());
+                    cmd.Parameters.AddWithValue("@dotortype", typeTB.Text.Trim());
+                    cmd.ExecuteNonQuery();
+                    display_data();
+                    MessageBox.Show("Update is successful!");
+                    Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            // Create an instance of the target form
+            ParentDetails ParentDetails = new ParentDetails();
+
+            // Display the target form
+            ParentDetails.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            DoctarDetails DoctarDetails = new DoctarDetails();
+
+            // Display the target form
+            DoctarDetails.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            AppoinmentDetails AppoinmentDetails = new AppoinmentDetails();
+
+            // Display the target form
+            AppoinmentDetails.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            PatientHistoryDetails PatientHistoryDetails = new PatientHistoryDetails();
+
+            // Display the target form
+            PatientHistoryDetails.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            PaymentDetails PaymentDetails = new PaymentDetails();
+
+            // Display the target form
+            PaymentDetails.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
         }
     }
 }
