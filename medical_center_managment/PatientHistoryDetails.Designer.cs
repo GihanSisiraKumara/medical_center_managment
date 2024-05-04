@@ -76,12 +76,13 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button1.Location = new System.Drawing.Point(425, 87);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 33);
             this.button1.TabIndex = 3;
             this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
@@ -111,52 +112,57 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1244, 24);
+            this.button2.BackColor = System.Drawing.Color.Pink;
+            this.button2.Location = new System.Drawing.Point(1250, 24);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(83, 32);
             this.button2.TabIndex = 7;
             this.button2.Text = "Patient";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1142, 24);
+            this.button3.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.button3.Location = new System.Drawing.Point(1158, 24);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(76, 32);
             this.button3.TabIndex = 8;
             this.button3.Text = "Doctar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1019, 24);
+            this.button4.BackColor = System.Drawing.Color.Gainsboro;
+            this.button4.Location = new System.Drawing.Point(1049, 24);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(98, 23);
+            this.button4.Size = new System.Drawing.Size(103, 32);
             this.button4.TabIndex = 9;
             this.button4.Text = "Appoinment";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(913, 24);
+            this.button5.BackColor = System.Drawing.Color.BurlyWood;
+            this.button5.Location = new System.Drawing.Point(953, 24);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(79, 32);
             this.button5.TabIndex = 10;
             this.button5.Text = "History";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(819, 24);
+            this.button6.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button6.Location = new System.Drawing.Point(852, 24);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(83, 32);
             this.button6.TabIndex = 11;
             this.button6.Text = "Payment";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // PatientHistoryDetails

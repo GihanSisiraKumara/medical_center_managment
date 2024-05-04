@@ -242,52 +242,57 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(1376, 36);
+            this.button5.BackColor = System.Drawing.Color.Pink;
+            this.button5.Location = new System.Drawing.Point(1367, 29);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(81, 30);
+            this.button5.Size = new System.Drawing.Size(87, 34);
             this.button5.TabIndex = 21;
             this.button5.Text = "Patient";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(1272, 40);
+            this.button6.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.button6.Location = new System.Drawing.Point(1266, 29);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(83, 34);
             this.button6.TabIndex = 22;
             this.button6.Text = "Doctar";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(1154, 36);
+            this.button7.BackColor = System.Drawing.Color.Gainsboro;
+            this.button7.Location = new System.Drawing.Point(1163, 29);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(93, 23);
+            this.button7.Size = new System.Drawing.Size(97, 34);
             this.button7.TabIndex = 23;
             this.button7.Text = "Appoinment";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(1058, 36);
+            this.button8.BackColor = System.Drawing.Color.BurlyWood;
+            this.button8.Location = new System.Drawing.Point(1082, 29);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.Size = new System.Drawing.Size(75, 34);
             this.button8.TabIndex = 24;
             this.button8.Text = "History";
-            this.button8.UseVisualStyleBackColor = true;
+            this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(962, 36);
+            this.button9.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button9.Location = new System.Drawing.Point(984, 29);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.Size = new System.Drawing.Size(79, 34);
             this.button9.TabIndex = 25;
             this.button9.Text = "Payment";
-            this.button9.UseVisualStyleBackColor = true;
+            this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // DoctarDetails

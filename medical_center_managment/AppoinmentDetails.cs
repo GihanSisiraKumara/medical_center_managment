@@ -116,12 +116,22 @@ namespace medical_center_managment
                     cmd.CommandText = "SELECT * FROM Appoinments WHERE AppoinmentNumber =@appoinmentnumber OR PatientID = @patientid";
                     cmd.Parameters.AddWithValue("@appoinmentnumber", apponumbertb.Text.Trim());
                     cmd.Parameters.AddWithValue("@patientid", PatientIDtb.Text.Trim());
-                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        apponumbertb.Text = reader["AppoinmentNumber"].ToString();
+                        appotimetb.Text = reader["AppoinmentTime"].ToString();
+                        appodatetb.Text = reader["AppoinmentDate"].ToString();
+                        PatientIDtb.Text = reader["PatientID"].ToString();
+                        doctorTB.Text = reader["DoctarID"].ToString();
+                       
+                    }
+                    else
+                    {
+                        MessageBox.Show("No matching records found.");
+                    }
 
-                    DataTable dataTable = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dataTable);
-                    dataGridView1.DataSource = dataTable;
+                    reader.Close();
                 }
             }
             catch (Exception ex)
@@ -139,13 +149,12 @@ namespace medical_center_managment
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "UPDATE Appoinments SET AppoinmentNumber = @appoinmentnumber, AppoinmentTime = @appoinmenttime, AppoinmentDate =@appoinmentdate, PatientID = @patientid, DoctarID = @doctorid";
+                    cmd.CommandText = "UPDATE Appoinments SET AppoinmentTime = @appoinmenttime, AppoinmentDate = @appoinmentdate, PatientID = @patientid, DoctarID = @doctorid WHERE AppoinmentNumber = @appoinmentnumber";
                     cmd.Parameters.AddWithValue("@appoinmentnumber", apponumbertb.Text.Trim());
                     cmd.Parameters.AddWithValue("@appoinmenttime", appotimetb.Text.Trim());
                     cmd.Parameters.AddWithValue("@appoinmentdate", appodatetb.Text.Trim());
                     cmd.Parameters.AddWithValue("@patientid", PatientIDtb.Text.Trim());
                     cmd.Parameters.AddWithValue("@doctorid", doctorTB.Text.Trim());
-
                     cmd.ExecuteNonQuery();
                     display_data();
                     MessageBox.Show("Update is successful!");
