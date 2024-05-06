@@ -255,7 +255,14 @@ namespace medical_center_managment
 
         private void button11_Click(object sender, EventArgs e)
         {
+            // Create an instance of the target form
+            SupplyerOrderDetails SupplyerOrderDetails = new SupplyerOrderDetails();
 
+            // Display the target form
+            SupplyerOrderDetails.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
         }
 
         private void button12_Click(object sender, EventArgs e)

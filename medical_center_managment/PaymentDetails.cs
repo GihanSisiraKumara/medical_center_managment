@@ -183,5 +183,17 @@ namespace medical_center_managment
             // Optionally, hide the current form if you don't need it anymore
             Visible = false;
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            DrugsDetails DrugsDetails = new DrugsDetails();
+
+            // Display the target form
+            DrugsDetails.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
     }
 }

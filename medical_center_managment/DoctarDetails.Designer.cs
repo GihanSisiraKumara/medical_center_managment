@@ -314,7 +314,7 @@
             this.button11.BackColor = System.Drawing.Color.CadetBlue;
             this.button11.Location = new System.Drawing.Point(764, 29);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(80, 39);
+            this.button11.Size = new System.Drawing.Size(80, 34);
             this.button11.TabIndex = 27;
             this.button11.Text = "SupOrder";
             this.button11.UseVisualStyleBackColor = false;
@@ -325,7 +325,7 @@
             this.button12.BackColor = System.Drawing.Color.DarkGray;
             this.button12.Location = new System.Drawing.Point(668, 29);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(78, 39);
+            this.button12.Size = new System.Drawing.Size(78, 34);
             this.button12.TabIndex = 28;
             this.button12.Text = "Drugs";
             this.button12.UseVisualStyleBackColor = false;

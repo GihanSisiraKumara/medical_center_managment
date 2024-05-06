@@ -41,6 +41,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,7 +116,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Pink;
-            this.button2.Location = new System.Drawing.Point(1250, 24);
+            this.button2.Location = new System.Drawing.Point(1264, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(83, 32);
             this.button2.TabIndex = 7;
@@ -125,7 +127,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.button3.Location = new System.Drawing.Point(1158, 24);
+            this.button3.Location = new System.Drawing.Point(1182, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(76, 32);
             this.button3.TabIndex = 8;
@@ -136,7 +138,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Gainsboro;
-            this.button4.Location = new System.Drawing.Point(1049, 24);
+            this.button4.Location = new System.Drawing.Point(1073, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(103, 32);
             this.button4.TabIndex = 9;
@@ -147,7 +149,7 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.BurlyWood;
-            this.button5.Location = new System.Drawing.Point(953, 24);
+            this.button5.Location = new System.Drawing.Point(988, 12);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(79, 32);
             this.button5.TabIndex = 10;
@@ -158,7 +160,7 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button6.Location = new System.Drawing.Point(852, 24);
+            this.button6.Location = new System.Drawing.Point(899, 12);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(83, 32);
             this.button6.TabIndex = 11;
@@ -168,7 +170,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(722, 24);
+            this.button7.Location = new System.Drawing.Point(787, 12);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(106, 32);
             this.button7.TabIndex = 12;
@@ -176,11 +178,34 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(603, 12);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(92, 33);
+            this.button8.TabIndex = 13;
+            this.button8.Text = "Drugs";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.CadetBlue;
+            this.button11.Location = new System.Drawing.Point(701, 12);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(80, 34);
+            this.button11.TabIndex = 29;
+            this.button11.Text = "SupOrder";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // PatientHistoryDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1359, 584);
+            this.Controls.Add(this.button11);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -218,5 +243,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button11;
     }
 }

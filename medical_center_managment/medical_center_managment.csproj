@@ -67,11 +67,11 @@
     <Compile Include="DrugsDetails.Designer.cs">
       <DependentUpon>DrugsDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="SuplyerOrderDetails.cs">
+    <Compile Include="SupplyerOrderDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SuplyerOrderDetails.Designer.cs">
-      <DependentUpon>SuplyerOrderDetails.cs</DependentUpon>
+    <Compile Include="SupplyerOrderDetails.Designer.cs">
+      <DependentUpon>SupplyerOrderDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="PharmacyPayment.cs">
       <SubType>Form</SubType>
@@ -129,8 +129,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SuplyerOrderDetails.resx">
-      <DependentUpon>SuplyerOrderDetails.cs</DependentUpon>
+    <EmbeddedResource Include="SupplyerOrderDetails.resx">
+      <DependentUpon>SupplyerOrderDetails.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

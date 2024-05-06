@@ -11,10 +11,11 @@ using System.Windows.Forms;
 
 namespace medical_center_managment
 {
-    public partial class PatientHistoryDetails : Form
+   
+    public partial class SupplyerOrderDetails : Form
     {
         string connectionString = @"Data Source=LAPTOP-4VMD8P7I;Initial Catalog=medical_center;Integrated Security=True;";
-        public PatientHistoryDetails()
+        public SupplyerOrderDetails()
         {
             InitializeComponent();
         }
@@ -27,7 +28,7 @@ namespace medical_center_managment
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "select * from Patient_Hostory";
+                    cmd.CommandText = "select * from SuplyOrder";
                     cmd.ExecuteNonQuery();
                     DataTable dataTable = new DataTable();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -40,103 +41,10 @@ namespace medical_center_managment
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-
-        private void PatientHistoryDetails_Load(object sender, EventArgs e)
+        private void SupplyerOrderDetails_Load(object sender, EventArgs e)
         {
             display_data();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            // Create an instance of the target form
-            DoctarDetails DoctarDetails = new DoctarDetails();
-
-            // Display the target form
-            DoctarDetails.Show();
-
-            // Optionally, hide the current form if you don't need it anymore
-            Visible = false;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            // Create an instance of the target form
-            ParentDetails ParentDetails = new ParentDetails();
-
-            // Display the target form
-            ParentDetails.Show();
-
-            // Optionally, hide the current form if you don't need it anymore
-            Visible = false;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            // Create an instance of the target form
-            AppoinmentDetails AppoinmentDetails = new AppoinmentDetails();
-
-            // Display the target form
-            AppoinmentDetails.Show();
-
-            // Optionally, hide the current form if you don't need it anymore
-            Visible = false;
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            // Create an instance of the target form
-            PatientHistoryDetails PatientHistoryDetails = new PatientHistoryDetails();
-
-            // Display the target form
-            PatientHistoryDetails.Show();
-
-            // Optionally, hide the current form if you don't need it anymore
-            Visible = false;
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            // Create an instance of the target form
-            PaymentDetails PaymentDetails = new PaymentDetails();
-
-            // Display the target form
-            PaymentDetails.Show();
-
-            // Optionally, hide the current form if you don't need it anymore
-            Visible = false;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            // Create an instance of the target form
-            PharmacyPayment PharmacyPayment = new PharmacyPayment();
-
-            // Display the target form
-            PharmacyPayment.Show();
-
-            // Optionally, hide the current form if you don't need it anymore
-            Visible = false;
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            // Create an instance of the target form
-            DrugsDetails DrugsDetails = new DrugsDetails();
-
-            // Display the target form
-            DrugsDetails.Show();
-
-            // Optionally, hide the current form if you don't need it anymore
-            Visible = false;
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -149,6 +57,95 @@ namespace medical_center_managment
 
             // Optionally, hide the current form if you don't need it anymore
             Visible = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            ParentDetails ParentDetails = new ParentDetails();
+
+            // Display the target form
+            ParentDetails.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            DoctarDetails DoctarDetails = new DoctarDetails();
+
+            // Display the target form
+            DoctarDetails.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            AppoinmentDetails AppoinmentDetails = new AppoinmentDetails();
+
+            // Display the target form
+            AppoinmentDetails.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            PatientHistoryDetails PatientHistoryDetails = new PatientHistoryDetails();
+
+            // Display the target form
+            PatientHistoryDetails.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            PaymentDetails PaymentDetails = new PaymentDetails();
+
+            // Display the target form
+            PaymentDetails.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            PharmacyPayment PharmacyPayment = new PharmacyPayment();
+
+            // Display the target form
+            PharmacyPayment.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            DrugsDetails DrugsDetails = new DrugsDetails();
+
+            // Display the target form
+            DrugsDetails.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
