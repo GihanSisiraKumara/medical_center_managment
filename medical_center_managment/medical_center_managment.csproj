@@ -61,6 +61,18 @@
     <Compile Include="AppoinmentDetails.Designer.cs">
       <DependentUpon>AppoinmentDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="DrugsDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrugsDetails.Designer.cs">
+      <DependentUpon>DrugsDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuplyerOrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuplyerOrderDetails.Designer.cs">
+      <DependentUpon>SuplyerOrderDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="PharmacyPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +105,9 @@
     <EmbeddedResource Include="DoctarDetails.resx">
       <DependentUpon>DoctarDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DrugsDetails.resx">
+      <DependentUpon>DrugsDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PharmacyPayment.resx">
       <DependentUpon>PharmacyPayment.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +129,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SuplyerOrderDetails.resx">
+      <DependentUpon>SuplyerOrderDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
