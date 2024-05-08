@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nametb = new System.Windows.Forms.TextBox();
             this.appotb = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -57,21 +55,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Patient History";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(35, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Name";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 140);
+            this.label3.Location = new System.Drawing.Point(35, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(152, 25);
             this.label3.TabIndex = 2;
@@ -80,7 +68,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button1.Location = new System.Drawing.Point(425, 87);
+            this.button1.Location = new System.Drawing.Point(424, 106);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 33);
             this.button1.TabIndex = 3;
@@ -99,19 +87,13 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // nametb
-            // 
-            this.nametb.Location = new System.Drawing.Point(214, 92);
-            this.nametb.Name = "nametb";
-            this.nametb.Size = new System.Drawing.Size(148, 22);
-            this.nametb.TabIndex = 5;
-            // 
             // appotb
             // 
-            this.appotb.Location = new System.Drawing.Point(214, 143);
+            this.appotb.Location = new System.Drawing.Point(212, 118);
             this.appotb.Name = "appotb";
             this.appotb.Size = new System.Drawing.Size(148, 22);
             this.appotb.TabIndex = 6;
+            this.appotb.TextChanged += new System.EventHandler(this.appotb_TextChanged);
             // 
             // button2
             // 
@@ -213,11 +195,9 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.appotb);
-            this.Controls.Add(this.nametb);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "PatientHistoryDetails";
             this.Text = "Patient History";
@@ -231,11 +211,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox nametb;
         private System.Windows.Forms.TextBox appotb;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

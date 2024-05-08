@@ -60,7 +60,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 172);
+            this.label2.Location = new System.Drawing.Point(32, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 25);
             this.label2.TabIndex = 1;
@@ -78,10 +78,11 @@
             // 
             // ordertb
             // 
-            this.ordertb.Location = new System.Drawing.Point(153, 172);
+            this.ordertb.Location = new System.Drawing.Point(153, 129);
             this.ordertb.Name = "ordertb";
             this.ordertb.Size = new System.Drawing.Size(135, 22);
             this.ordertb.TabIndex = 3;
+            this.ordertb.TextChanged += new System.EventHandler(this.ordertb_TextChanged);
             // 
             // button5
             // 
@@ -185,12 +186,13 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Red;
-            this.button4.Location = new System.Drawing.Point(153, 222);
+            this.button4.Location = new System.Drawing.Point(153, 186);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(83, 34);
             this.button4.TabIndex = 31;
             this.button4.Text = "Delect";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // SupplyerOrderDetails
             // 

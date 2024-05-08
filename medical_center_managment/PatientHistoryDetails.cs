@@ -112,7 +112,43 @@ namespace medical_center_managment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                string appoinmentId = appotb.Text.Trim();
+
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Patient_Hostory WHERE AppoinmentNo = @appoinmentId", sqlCon);
+                    cmd.Parameters.AddWithValue("@appoinmentId", appoinmentId);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        // Highlight the row in the DataGridView
+                        int rowIndex = dataGridView1.Rows.Cast<DataGridViewRow>()
+                                            .Where(row => row.Cells["AppoinmentNo"].Value.ToString() == appoinmentId)
+                                            .Select(row => row.Index)
+                                            .FirstOrDefault();
+
+                        if (rowIndex >= 0)
+                        {
+                            dataGridView1.ClearSelection();
+                            dataGridView1.Rows[rowIndex].Selected = true;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No matching records found.");
+                    }
+
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -149,6 +185,11 @@ namespace medical_center_managment
 
             // Optionally, hide the current form if you don't need it anymore
             Visible = false;
+        }
+
+        private void appotb_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

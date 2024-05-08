@@ -145,6 +145,79 @@ namespace medical_center_managment
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string orderId = ordertb.Text.Trim();
+
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM SuplyOrder WHERE OrderId = @orderId", sqlCon);
+                    cmd.Parameters.AddWithValue("@orderId", orderId);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        // Highlight the row in the DataGridView
+                        int rowIndex = dataGridView1.Rows.Cast<DataGridViewRow>()
+                                            .Where(row => row.Cells["OrderId"].Value.ToString() == orderId)
+                                            .Select(row => row.Index)
+                                            .FirstOrDefault();
+
+                        if (rowIndex >= 0)
+                        {
+                            dataGridView1.ClearSelection();
+                            dataGridView1.Rows[rowIndex].Selected = true;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No matching records found.");
+                    }
+
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+
+        }
+
+        private void ordertb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string orderId = ordertb.Text.Trim();
+
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlCommand cmd = new SqlCommand("DELETE FROM SuplyOrder WHERE OrderId = @orderId", sqlCon);
+                    cmd.Parameters.AddWithValue("@orderId", orderId);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Order deleted successfully.");
+                        display_data(); // Refresh the DataGridView after deletion
+                    }
+                    else
+                    {
+                        MessageBox.Show("No matching records found.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
 
         }
     }
