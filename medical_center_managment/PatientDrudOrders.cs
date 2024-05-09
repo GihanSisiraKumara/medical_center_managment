@@ -11,72 +11,12 @@ using System.Windows.Forms;
 
 namespace medical_center_managment
 {
-    public partial class PharmacyPayment : Form
+    public partial class PatientDrudOrders : Form
     {
         string connectionString = @"Data Source=LAPTOP-4VMD8P7I;Initial Catalog=medical_center;Integrated Security=True;";
-        public PharmacyPayment()
+        public PatientDrudOrders()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (SqlConnection sqlCon = new SqlConnection(connectionString))
-                {
-                    sqlCon.Open();
-                    SqlCommand sqlCmd = new SqlCommand("pharmacyPayments", sqlCon);
-                    sqlCmd.CommandType = CommandType.StoredProcedure;
-                    sqlCmd.Parameters.AddWithValue("@paymentDate", paydateTB.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@amount", amountTB.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@paymentType", paymenttypeTB.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@phStatus", texpaystatusTB.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@patientId", paytentidTB.Text.Trim());
-                   
-                    sqlCmd.ExecuteNonQuery();
-                    display_data();
-                    paytentidTB.Text = "";
-                    MessageBox.Show("Register is successfull !");
-                    Clear();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message);
-            }
-        }
-        void Clear()
-        {
-            paydateTB.Text = amountTB.Text = paymenttypeTB.Text = texpaystatusTB.Text = paytentidTB.Text = "";
-        }
-        public void display_data()
-        {
-            try
-            {
-                using (SqlConnection sqlCon = new SqlConnection(connectionString))
-                {
-                    sqlCon.Open();
-                    SqlCommand cmd = sqlCon.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "select * from PhPayments";
-                    cmd.ExecuteNonQuery();
-                    DataTable dataTable = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dataTable);
-                    dataGridView1.DataSource = dataTable;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message);
-            }
-        }
-
-        private void PharmacyPayment_Load(object sender, EventArgs e)
-        {
-            display_data();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -86,26 +26,93 @@ namespace medical_center_managment
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
+                    SqlCommand sqlCmd = new SqlCommand("PatientGiveOrders", sqlCon);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@orderDate", ordertb.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@totalCost", pricetb.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@orderDescription", descriptiontb.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@patientID", patienttb.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@paymentID", paymenttb.Text.Trim());
+                   
+
+                    sqlCmd.ExecuteNonQuery();
+                    display_data();
+                    patienttb.Text = "";
+                    paymenttb.Text = "";
+                    MessageBox.Show("Drugs insert is successfull !");
+                    Clear();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+
+        }
+        void Clear()
+        {
+            ordertb.Text = pricetb.Text = descriptiontb.Text = patienttb.Text = paymenttb.Text = "";
+        }
+
+        public void display_data()
+        {
+            try
+            {
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "SELECT * FROM PhPayments WHERE  PatientID = @patientId";
-                    cmd.Parameters.AddWithValue("@patientId", paytentidTB.Text.Trim());
+                    cmd.CommandText = "select * from GiveOrders";
+                    cmd.ExecuteNonQuery();
+                    DataTable dataTable = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        private void PatientDrudOrders_Load(object sender, EventArgs e)
+        {
+            display_data();
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlCommand cmd = sqlCon.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "SELECT * FROM GiveOrders WHERE PatientID = @patientID OR PaymentID = @paymentID"; 
+                    cmd.Parameters.AddWithValue("@patientID", patienttb.Text.Trim());
+                    cmd.Parameters.AddWithValue("@paymentID", paymenttb.Text.Trim());
+
                     cmd.ExecuteNonQuery();
                     DataTable dataTable = new DataTable();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(dataTable);
                     dataGridView1.DataSource = dataTable;
 
-
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
-                        paydateTB.Text = reader["PaymentDate"].ToString();
-                        amountTB.Text = reader["Amount"].ToString();
-                        paymenttypeTB.Text = reader["Phtype"].ToString();
-                        texpaystatusTB.Text = reader["PhStatus"].ToString();
-                        paytentidTB.Text = reader["PatientID"].ToString();
+                        ordertb.Text = reader["OrderDate"].ToString();
+                        pricetb.Text = reader["TotalCost"].ToString();
+                        descriptiontb.Text = reader["OrderDescription"].ToString();
+                        patienttb.Text = reader["PatientID"].ToString();
+                        paymenttb.Text = reader["PaymentID"].ToString();
                        
+
                     }
                     else
                     {
@@ -123,6 +130,59 @@ namespace medical_center_managment
 
         private void button3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlCommand cmd = sqlCon.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "UPDATE GiveOrders SET OrderDate = @orderDate, TotalCost = @totalCost, OrderDescription = @orderDescription  WHERE PatientID = @patientID OR PaymentID = @paymentID";
+                    cmd.Parameters.AddWithValue("@orderDate", ordertb.Text.Trim());
+                    cmd.Parameters.AddWithValue("@totalCost", pricetb.Text.Trim());
+                    cmd.Parameters.AddWithValue("@orderDescription", descriptiontb.Text.Trim());
+                    cmd.Parameters.AddWithValue("@patientID", patienttb.Text.Trim());
+                    cmd.Parameters.AddWithValue("@paymentID", paymenttb.Text.Trim());
+
+                    cmd.ExecuteNonQuery();
+                    display_data();
+                    MessageBox.Show("Update is successful!");
+                    Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlCommand cmd = sqlCon.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "DELETE FROM GiveOrders WHERE PatientID = '" + patienttb.Text + "'";
+
+                    cmd.ExecuteNonQuery();
+                    connectionString.Clone();
+                    display_data();
+                    MessageBox.Show("Delect is succesfull !");
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
             // Create an instance of the target form
             ParentDetails ParentDetails = new ParentDetails();
 
@@ -133,7 +193,7 @@ namespace medical_center_managment
             Visible = false;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
             // Create an instance of the target form
             DoctarDetails DoctarDetails = new DoctarDetails();
@@ -145,7 +205,7 @@ namespace medical_center_managment
             Visible = false;
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
             // Create an instance of the target form
             AppoinmentDetails AppoinmentDetails = new AppoinmentDetails();
@@ -157,9 +217,8 @@ namespace medical_center_managment
             Visible = false;
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)
         {
-
             // Create an instance of the target form
             PatientHistoryDetails PatientHistoryDetails = new PatientHistoryDetails();
 
@@ -170,7 +229,7 @@ namespace medical_center_managment
             Visible = false;
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)
         {
             // Create an instance of the target form
             PaymentDetails PaymentDetails = new PaymentDetails();
@@ -182,7 +241,7 @@ namespace medical_center_managment
             Visible = false;
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void button10_Click(object sender, EventArgs e)
         {
             // Create an instance of the target form
             PharmacyPayment PharmacyPayment = new PharmacyPayment();
@@ -194,19 +253,7 @@ namespace medical_center_managment
             Visible = false;
         }
 
-        private void button9_Click(object sender, EventArgs e)
-        {
-            // Create an instance of the target form
-            DrugsDetails DrugsDetails = new DrugsDetails();
-
-            // Display the target form
-            DrugsDetails.Show();
-
-            // Optionally, hide the current form if you don't need it anymore
-            Visible = false;
-        }
-
-        private void button12_Click(object sender, EventArgs e)
+        private void button11_Click(object sender, EventArgs e)
         {
             // Create an instance of the target form
             SupplyerOrderDetails SupplyerOrderDetails = new SupplyerOrderDetails();
@@ -218,7 +265,19 @@ namespace medical_center_managment
             Visible = false;
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void button12_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            DrugsDetails DrugsDetails = new DrugsDetails();
+
+            // Display the target form
+            DrugsDetails.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             // Create an instance of the target form
             PatientDrudOrders PatientDrudOrders = new PatientDrudOrders();

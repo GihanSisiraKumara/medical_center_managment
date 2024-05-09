@@ -50,6 +50,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(60, 57);
+            this.label1.Location = new System.Drawing.Point(82, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(274, 32);
             this.label1.TabIndex = 0;
@@ -184,9 +185,9 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Pink;
-            this.button3.Location = new System.Drawing.Point(989, 22);
+            this.button3.Location = new System.Drawing.Point(1214, 12);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(83, 32);
+            this.button3.Size = new System.Drawing.Size(83, 34);
             this.button3.TabIndex = 14;
             this.button3.Text = "Patient";
             this.button3.UseVisualStyleBackColor = false;
@@ -195,9 +196,9 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.button4.Location = new System.Drawing.Point(894, 22);
+            this.button4.Location = new System.Drawing.Point(1123, 12);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(79, 32);
+            this.button4.Size = new System.Drawing.Size(85, 34);
             this.button4.TabIndex = 15;
             this.button4.Text = "Doctar";
             this.button4.UseVisualStyleBackColor = false;
@@ -206,9 +207,9 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Gainsboro;
-            this.button5.Location = new System.Drawing.Point(787, 22);
+            this.button5.Location = new System.Drawing.Point(1016, 9);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(101, 35);
+            this.button5.Size = new System.Drawing.Size(101, 37);
             this.button5.TabIndex = 16;
             this.button5.Text = "Appoinment";
             this.button5.UseVisualStyleBackColor = false;
@@ -217,7 +218,7 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.Gainsboro;
-            this.button6.Location = new System.Drawing.Point(703, 22);
+            this.button6.Location = new System.Drawing.Point(932, 11);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(78, 35);
             this.button6.TabIndex = 17;
@@ -228,7 +229,7 @@
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button7.Location = new System.Drawing.Point(610, 22);
+            this.button7.Location = new System.Drawing.Point(839, 12);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(87, 35);
             this.button7.TabIndex = 18;
@@ -239,9 +240,9 @@
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.BurlyWood;
-            this.button8.Location = new System.Drawing.Point(498, 20);
+            this.button8.Location = new System.Drawing.Point(727, 12);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(106, 37);
+            this.button8.Size = new System.Drawing.Size(106, 34);
             this.button8.TabIndex = 19;
             this.button8.Text = "PuPhPayment";
             this.button8.UseVisualStyleBackColor = false;
@@ -249,18 +250,19 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(316, 23);
+            this.button9.BackColor = System.Drawing.Color.DarkGray;
+            this.button9.Location = new System.Drawing.Point(545, 14);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(90, 34);
+            this.button9.Size = new System.Drawing.Size(90, 33);
             this.button9.TabIndex = 20;
             this.button9.Text = "Drugs";
-            this.button9.UseVisualStyleBackColor = true;
+            this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button12
             // 
             this.button12.BackColor = System.Drawing.Color.CadetBlue;
-            this.button12.Location = new System.Drawing.Point(412, 23);
+            this.button12.Location = new System.Drawing.Point(641, 12);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(80, 34);
             this.button12.TabIndex = 29;
@@ -268,11 +270,23 @@
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button13.Location = new System.Drawing.Point(432, 14);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(107, 32);
+            this.button13.TabIndex = 33;
+            this.button13.Text = "Patient Orders";
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // PharmacyPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 502);
+            this.ClientSize = new System.Drawing.Size(1309, 502);
+            this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -328,5 +342,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
     }
 }

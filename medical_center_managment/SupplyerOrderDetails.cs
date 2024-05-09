@@ -220,5 +220,17 @@ namespace medical_center_managment
             }
 
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            PatientDrudOrders PatientDrudOrders = new PatientDrudOrders();
+
+            // Display the target form
+            PatientDrudOrders.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
     }
 }

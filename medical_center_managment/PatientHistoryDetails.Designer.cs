@@ -41,6 +41,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,12 +163,13 @@
             // 
             // button8
             // 
+            this.button8.BackColor = System.Drawing.Color.DarkGray;
             this.button8.Location = new System.Drawing.Point(603, 12);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(92, 33);
             this.button8.TabIndex = 13;
             this.button8.Text = "Drugs";
-            this.button8.UseVisualStyleBackColor = true;
+            this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button11
@@ -181,11 +183,23 @@
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button13.Location = new System.Drawing.Point(490, 12);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(107, 34);
+            this.button13.TabIndex = 31;
+            this.button13.Text = "Patient Orders";
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // PatientHistoryDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1359, 584);
+            this.Controls.Add(this.button13);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -223,5 +237,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button13;
     }
 }
