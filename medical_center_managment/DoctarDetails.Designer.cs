@@ -57,6 +57,8 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.Test = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -195,7 +197,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Navy;
-            this.label8.Location = new System.Drawing.Point(143, 36);
+            this.label8.Location = new System.Drawing.Point(130, 60);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(192, 32);
             this.label8.TabIndex = 15;
@@ -315,7 +317,7 @@
             this.button11.BackColor = System.Drawing.Color.CadetBlue;
             this.button11.Location = new System.Drawing.Point(764, 29);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(80, 34);
+            this.button11.Size = new System.Drawing.Size(96, 34);
             this.button11.TabIndex = 27;
             this.button11.Text = "SupOrder";
             this.button11.UseVisualStyleBackColor = false;
@@ -343,11 +345,33 @@
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button14.Location = new System.Drawing.Point(355, 29);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(86, 34);
+            this.button14.TabIndex = 68;
+            this.button14.Text = "LB Assis";
+            this.button14.UseVisualStyleBackColor = false;
+            // 
+            // Test
+            // 
+            this.Test.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.Test.Location = new System.Drawing.Point(456, 29);
+            this.Test.Name = "Test";
+            this.Test.Size = new System.Drawing.Size(88, 34);
+            this.Test.TabIndex = 67;
+            this.Test.Text = "LabTest";
+            this.Test.UseVisualStyleBackColor = false;
+            // 
             // DoctarDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1478, 678);
+            this.Controls.Add(this.button14);
+            this.Controls.Add(this.Test);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
@@ -417,5 +441,7 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button Test;
     }
 }

@@ -55,6 +55,8 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Test = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -311,11 +313,33 @@
             this.dataGridView1.Size = new System.Drawing.Size(846, 382);
             this.dataGridView1.TabIndex = 51;
             // 
+            // Test
+            // 
+            this.Test.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.Test.Location = new System.Drawing.Point(328, 12);
+            this.Test.Name = "Test";
+            this.Test.Size = new System.Drawing.Size(88, 34);
+            this.Test.TabIndex = 65;
+            this.Test.Text = "LabTest";
+            this.Test.UseVisualStyleBackColor = false;
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button14.Location = new System.Drawing.Point(227, 12);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(86, 34);
+            this.button14.TabIndex = 66;
+            this.button14.Text = "LB Assis";
+            this.button14.UseVisualStyleBackColor = false;
+            // 
             // LabassistantDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 587);
+            this.Controls.Add(this.button14);
+            this.Controls.Add(this.Test);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
@@ -380,5 +404,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button Test;
+        private System.Windows.Forms.Button button14;
     }
 }
