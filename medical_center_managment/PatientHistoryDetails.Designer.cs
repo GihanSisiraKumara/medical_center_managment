@@ -42,6 +42,8 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.Test = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +52,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(34, 24);
+            this.label1.Location = new System.Drawing.Point(81, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 32);
             this.label1.TabIndex = 0;
@@ -60,7 +62,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 114);
+            this.label3.Location = new System.Drawing.Point(35, 134);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(152, 25);
             this.label3.TabIndex = 2;
@@ -69,7 +71,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button1.Location = new System.Drawing.Point(424, 106);
+            this.button1.Location = new System.Drawing.Point(422, 123);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 33);
             this.button1.TabIndex = 3;
@@ -90,7 +92,7 @@
             // 
             // appotb
             // 
-            this.appotb.Location = new System.Drawing.Point(212, 118);
+            this.appotb.Location = new System.Drawing.Point(209, 134);
             this.appotb.Name = "appotb";
             this.appotb.Size = new System.Drawing.Size(148, 22);
             this.appotb.TabIndex = 6;
@@ -194,11 +196,35 @@
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button14.Location = new System.Drawing.Point(295, 12);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(86, 34);
+            this.button14.TabIndex = 70;
+            this.button14.Text = "LB Assis";
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // Test
+            // 
+            this.Test.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.Test.Location = new System.Drawing.Point(396, 12);
+            this.Test.Name = "Test";
+            this.Test.Size = new System.Drawing.Size(88, 34);
+            this.Test.TabIndex = 69;
+            this.Test.Text = "LabTest";
+            this.Test.UseVisualStyleBackColor = false;
+            this.Test.Click += new System.EventHandler(this.Test_Click);
+            // 
             // PatientHistoryDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1359, 584);
+            this.Controls.Add(this.button14);
+            this.Controls.Add(this.Test);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button8);
@@ -238,5 +264,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button Test;
     }
 }

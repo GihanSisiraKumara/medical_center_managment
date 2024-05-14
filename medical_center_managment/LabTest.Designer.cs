@@ -35,12 +35,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.typetb = new System.Windows.Forms.TextBox();
+            this.nametb = new System.Windows.Forms.TextBox();
+            this.datetb = new System.Windows.Forms.TextBox();
+            this.statustb = new System.Windows.Forms.TextBox();
+            this.patenttb = new System.Windows.Forms.TextBox();
+            this.paymenttb = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -57,6 +57,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.Test = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.assistb = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,7 +107,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(48, 390);
+            this.label4.Location = new System.Drawing.Point(55, 392);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 25);
             this.label4.TabIndex = 39;
@@ -115,7 +117,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(48, 459);
+            this.label5.Location = new System.Drawing.Point(53, 515);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 25);
             this.label5.TabIndex = 40;
@@ -125,83 +127,86 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(48, 524);
+            this.label6.Location = new System.Drawing.Point(48, 574);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 25);
             this.label6.TabIndex = 41;
             this.label6.Text = "Payment ID";
             // 
-            // textBox1
+            // typetb
             // 
-            this.textBox1.Location = new System.Drawing.Point(218, 179);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 22);
-            this.textBox1.TabIndex = 43;
+            this.typetb.Location = new System.Drawing.Point(218, 179);
+            this.typetb.Name = "typetb";
+            this.typetb.Size = new System.Drawing.Size(142, 22);
+            this.typetb.TabIndex = 43;
             // 
-            // textBox2
+            // nametb
             // 
-            this.textBox2.Location = new System.Drawing.Point(218, 246);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(142, 22);
-            this.textBox2.TabIndex = 44;
+            this.nametb.Location = new System.Drawing.Point(218, 246);
+            this.nametb.Name = "nametb";
+            this.nametb.Size = new System.Drawing.Size(142, 22);
+            this.nametb.TabIndex = 44;
             // 
-            // textBox3
+            // datetb
             // 
-            this.textBox3.Location = new System.Drawing.Point(218, 316);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(142, 22);
-            this.textBox3.TabIndex = 45;
+            this.datetb.Location = new System.Drawing.Point(218, 316);
+            this.datetb.Name = "datetb";
+            this.datetb.Size = new System.Drawing.Size(142, 22);
+            this.datetb.TabIndex = 45;
             // 
-            // textBox4
+            // statustb
             // 
-            this.textBox4.Location = new System.Drawing.Point(218, 394);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(142, 22);
-            this.textBox4.TabIndex = 46;
+            this.statustb.Location = new System.Drawing.Point(218, 392);
+            this.statustb.Name = "statustb";
+            this.statustb.Size = new System.Drawing.Size(142, 22);
+            this.statustb.TabIndex = 46;
             // 
-            // textBox5
+            // patenttb
             // 
-            this.textBox5.Location = new System.Drawing.Point(218, 459);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(142, 22);
-            this.textBox5.TabIndex = 47;
+            this.patenttb.Location = new System.Drawing.Point(218, 518);
+            this.patenttb.Name = "patenttb";
+            this.patenttb.Size = new System.Drawing.Size(142, 22);
+            this.patenttb.TabIndex = 47;
             // 
-            // textBox6
+            // paymenttb
             // 
-            this.textBox6.Location = new System.Drawing.Point(218, 526);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(142, 22);
-            this.textBox6.TabIndex = 48;
+            this.paymenttb.Location = new System.Drawing.Point(218, 578);
+            this.paymenttb.Name = "paymenttb";
+            this.paymenttb.Size = new System.Drawing.Size(142, 22);
+            this.paymenttb.TabIndex = 48;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Green;
-            this.button1.Location = new System.Drawing.Point(95, 597);
+            this.button1.Location = new System.Drawing.Point(92, 636);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 34);
             this.button1.TabIndex = 50;
             this.button1.Text = "Insert";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Teal;
-            this.button3.Location = new System.Drawing.Point(218, 597);
+            this.button3.Location = new System.Drawing.Point(218, 636);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(92, 34);
             this.button3.TabIndex = 51;
             this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Red;
-            this.button4.Location = new System.Drawing.Point(337, 597);
+            this.button4.Location = new System.Drawing.Point(335, 636);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(83, 34);
             this.button4.TabIndex = 52;
             this.button4.Text = "Delect";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dataGridView1
             // 
@@ -222,6 +227,7 @@
             this.button2.TabIndex = 54;
             this.button2.Text = "Search";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button13
             // 
@@ -322,6 +328,7 @@
             this.Test.TabIndex = 64;
             this.Test.Text = "LabTest";
             this.Test.UseVisualStyleBackColor = false;
+            this.Test.Click += new System.EventHandler(this.Test_Click);
             // 
             // button14
             // 
@@ -332,12 +339,32 @@
             this.button14.TabIndex = 67;
             this.button14.Text = "LB Assis";
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(55, 457);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(116, 25);
+            this.label7.TabIndex = 68;
+            this.label7.Text = "Assistant ID";
+            // 
+            // assistb
+            // 
+            this.assistb.Location = new System.Drawing.Point(218, 461);
+            this.assistb.Name = "assistb";
+            this.assistb.Size = new System.Drawing.Size(142, 22);
+            this.assistb.TabIndex = 69;
             // 
             // LabTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1356, 652);
+            this.ClientSize = new System.Drawing.Size(1356, 732);
+            this.Controls.Add(this.assistb);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.Test);
             this.Controls.Add(this.button13);
@@ -354,12 +381,12 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.paymenttb);
+            this.Controls.Add(this.patenttb);
+            this.Controls.Add(this.statustb);
+            this.Controls.Add(this.datetb);
+            this.Controls.Add(this.nametb);
+            this.Controls.Add(this.typetb);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -368,7 +395,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label8);
             this.Name = "LabTest";
-            this.Text = "Test Name";
+            this.Text = "Lab Test Details";
+            this.Load += new System.EventHandler(this.LabTest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -384,12 +412,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox typetb;
+        private System.Windows.Forms.TextBox nametb;
+        private System.Windows.Forms.TextBox datetb;
+        private System.Windows.Forms.TextBox statustb;
+        private System.Windows.Forms.TextBox patenttb;
+        private System.Windows.Forms.TextBox paymenttb;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -406,5 +434,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button Test;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox assistb;
     }
 }

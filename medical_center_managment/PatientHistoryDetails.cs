@@ -203,5 +203,29 @@ namespace medical_center_managment
             // Optionally, hide the current form if you don't need it anymore
             Visible = false;
         }
+
+        private void Test_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            LabTest LabTest = new LabTest();
+
+            // Display the target form
+            LabTest.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            LabassistantDetails LabassistantDetails = new LabassistantDetails();
+
+            // Display the target form
+            LabassistantDetails.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
     }
 }

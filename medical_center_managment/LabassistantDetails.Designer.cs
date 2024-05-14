@@ -309,6 +309,7 @@
             this.Test.TabIndex = 65;
             this.Test.Text = "LabTest";
             this.Test.UseVisualStyleBackColor = false;
+            this.Test.Click += new System.EventHandler(this.Test_Click);
             // 
             // button14
             // 
@@ -319,6 +320,7 @@
             this.button14.TabIndex = 66;
             this.button14.Text = "LB Assis";
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // label4
             // 

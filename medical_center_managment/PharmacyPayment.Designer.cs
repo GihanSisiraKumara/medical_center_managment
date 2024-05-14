@@ -51,6 +51,8 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.Test = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +61,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(82, 41);
+            this.label1.Location = new System.Drawing.Point(82, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(274, 32);
             this.label1.TabIndex = 0;
@@ -281,11 +283,35 @@
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button14.Location = new System.Drawing.Point(234, 14);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(86, 34);
+            this.button14.TabIndex = 70;
+            this.button14.Text = "LB Assis";
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // Test
+            // 
+            this.Test.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.Test.Location = new System.Drawing.Point(335, 14);
+            this.Test.Name = "Test";
+            this.Test.Size = new System.Drawing.Size(88, 34);
+            this.Test.TabIndex = 69;
+            this.Test.Text = "LabTest";
+            this.Test.UseVisualStyleBackColor = false;
+            this.Test.Click += new System.EventHandler(this.Test_Click);
+            // 
             // PharmacyPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1309, 502);
+            this.Controls.Add(this.button14);
+            this.Controls.Add(this.Test);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button9);
@@ -343,5 +369,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button Test;
     }
 }
