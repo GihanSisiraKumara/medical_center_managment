@@ -124,27 +124,30 @@ namespace medical_center_managment
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    SqlCommand cmd = sqlCon.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "SELECT * FROM Patient WHERE PatientID = @patientid OR FirstName = @firstname";
-                    cmd.Parameters.AddWithValue("@patientid", PatientIDtb.Text.Trim());
+                    SqlCommand cmd = new SqlCommand("searchpatientes", sqlCon);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@patientID", PatientIDtb.Text.Trim());
                     cmd.Parameters.AddWithValue("@firstname", Fnametb.Text.Trim());
-                    cmd.ExecuteNonQuery();
-                    DataTable dataTable = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dataTable);
-                    dataGridView1.DataSource = dataTable;
 
                     SqlDataReader reader = cmd.ExecuteReader();
-                    if (reader.Read())
+                    if (reader.HasRows)
                     {
-                        PatientIDtb.Text = reader["PatientID"].ToString();
-                        Fnametb.Text = reader["FirstName"].ToString();
-                        Snametb.Text = reader["SecondName"].ToString();
-                        Paddresstb.Text = reader["PatientAddress"].ToString();
-                        Agetb.Text = reader["Age"].ToString();
-                        Gendertb.Text = reader["Gender"].ToString();
-                        Statustb.Text = reader["PatientStatus"].ToString();
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(reader);
+                        dataGridView1.DataSource = dataTable;
+
+                        // Display the first row's data in textboxes
+                        if (dataTable.Rows.Count > 0)
+                        {
+                            DataRow firstRow = dataTable.Rows[0];
+                            PatientIDtb.Text = firstRow["PatientID"].ToString();
+                            Fnametb.Text = firstRow["FirstName"].ToString();
+                            Snametb.Text = firstRow["SecondName"].ToString();
+                            Paddresstb.Text = firstRow["PatientAddress"].ToString();
+                            Agetb.Text = firstRow["Age"].ToString();
+                            Gendertb.Text = firstRow["Gender"].ToString();
+                            Statustb.Text = firstRow["PatientStatus"].ToString();
+                        }
                     }
                     else
                     {
@@ -158,6 +161,7 @@ namespace medical_center_managment
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
+
 
         }
 
@@ -321,6 +325,19 @@ namespace medical_center_managment
 
             // Optionally, hide the current form if you don't need it anymore
             Visible = false;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            ViewAppoinment ViewAppoinment = new ViewAppoinment();
+
+            // Display the target form
+            ViewAppoinment.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+
         }
     }
 }

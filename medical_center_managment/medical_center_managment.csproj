@@ -67,6 +67,12 @@
     <Compile Include="DrugsDetails.Designer.cs">
       <DependentUpon>DrugsDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewAppoinment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAppoinment.Designer.cs">
+      <DependentUpon>ViewAppoinment.cs</DependentUpon>
+    </Compile>
     <Compile Include="LabTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DrugsDetails.resx">
       <DependentUpon>DrugsDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAppoinment.resx">
+      <DependentUpon>ViewAppoinment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LabassistantDetails.resx">
       <DependentUpon>LabassistantDetails.cs</DependentUpon>

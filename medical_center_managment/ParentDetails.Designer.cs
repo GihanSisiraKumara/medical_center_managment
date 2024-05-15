@@ -59,6 +59,7 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.Test = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -375,11 +376,23 @@
             this.Test.UseVisualStyleBackColor = false;
             this.Test.Click += new System.EventHandler(this.Test_Click);
             // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.Color.Pink;
+            this.button15.Location = new System.Drawing.Point(1393, 69);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(92, 39);
+            this.button15.TabIndex = 71;
+            this.button15.Text = "View Appoin";
+            this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
             // ParentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1497, 671);
+            this.Controls.Add(this.button15);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.Test);
             this.Controls.Add(this.button13);
@@ -453,6 +466,7 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button Test;
+        private System.Windows.Forms.Button button15;
     }
 }
 
