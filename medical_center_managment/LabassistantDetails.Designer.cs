@@ -82,6 +82,7 @@
             this.button5.TabIndex = 22;
             this.button5.Text = "Patient";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -92,6 +93,7 @@
             this.button6.TabIndex = 23;
             this.button6.Text = "Doctar";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -102,6 +104,7 @@
             this.button7.TabIndex = 24;
             this.button7.Text = "Appoinment";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -112,6 +115,7 @@
             this.button8.TabIndex = 25;
             this.button8.Text = "History";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -122,6 +126,7 @@
             this.button9.TabIndex = 26;
             this.button9.Text = "Payment";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -132,6 +137,7 @@
             this.button10.TabIndex = 27;
             this.button10.Text = "PharPayment";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -142,6 +148,7 @@
             this.button11.TabIndex = 28;
             this.button11.Text = "SupOrder";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
@@ -152,6 +159,7 @@
             this.button12.TabIndex = 29;
             this.button12.Text = "Drugs";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
@@ -162,6 +170,7 @@
             this.button13.TabIndex = 34;
             this.button13.Text = "Patient Orders";
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // label1
             // 
