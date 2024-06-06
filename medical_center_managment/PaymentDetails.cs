@@ -255,5 +255,57 @@ namespace medical_center_managment
             // Optionally, hide the current form if you don't need it anymore
             Visible = false;
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Check if paymentdate is provided
+                if (!string.IsNullOrEmpty(dalydatetb.Text))
+                {
+                   
+                    DateTime paymentDate = DateTime.Parse(dalydatetb.Text); // Parse the Paymentdate from the textbox
+                    // Call the SQL function to get total income for the day
+                    decimal totalIncomes = GetTotalIncomeOnDate(paymentDate);
+
+                    // Display the result in the textbox
+                    totalammotb.Text = totalIncomes.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a Payment Date.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+        private decimal GetTotalIncomeOnDate( DateTime paymentDate)
+        {
+            decimal totalIncomes = 0;
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                // Open the connection
+                sqlCon.Open();
+
+                // Create a SqlCommand to execute the SQL function
+                using (SqlCommand cmd = new SqlCommand("SELECT dbo.GetTotalIncomeOnDate(@PaymentDate)", sqlCon))
+                {
+                    // Add parameter for Paymentdate
+                   
+                    cmd.Parameters.AddWithValue("@PaymentDate", paymentDate);
+
+                    // Execute the command and get the result
+                    totalIncomes = (decimal)cmd.ExecuteScalar();
+                }
+            }
+            return totalIncomes;
+        }
+
+        private void dalydatetb_TextChanged(object sender, EventArgs e)
+        {
+            totalammotb.Text = string.Empty;
+        }
     }
 }

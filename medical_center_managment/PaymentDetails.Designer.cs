@@ -55,6 +55,12 @@
             this.Test = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dalydatetb = new System.Windows.Forms.TextBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.totalammotb = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,7 +146,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Green;
-            this.button1.Location = new System.Drawing.Point(206, 431);
+            this.button1.Location = new System.Drawing.Point(206, 421);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(86, 35);
             this.button1.TabIndex = 9;
@@ -155,7 +161,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(837, 311);
+            this.dataGridView1.Size = new System.Drawing.Size(837, 558);
             this.dataGridView1.TabIndex = 12;
             // 
             // button4
@@ -327,11 +333,74 @@
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Navy;
+            this.label7.Location = new System.Drawing.Point(38, 492);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(170, 32);
+            this.label7.TabIndex = 73;
+            this.label7.Text = "Daly Income";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(31, 561);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 25);
+            this.label8.TabIndex = 74;
+            this.label8.Text = "Date";
+            // 
+            // dalydatetb
+            // 
+            this.dalydatetb.Location = new System.Drawing.Point(206, 561);
+            this.dalydatetb.Name = "dalydatetb";
+            this.dalydatetb.Size = new System.Drawing.Size(139, 22);
+            this.dalydatetb.TabIndex = 75;
+            this.dalydatetb.TextChanged += new System.EventHandler(this.dalydatetb_TextChanged);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button10.Location = new System.Drawing.Point(206, 609);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 35);
+            this.button10.TabIndex = 76;
+            this.button10.Text = "Calculate";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(33, 669);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(145, 25);
+            this.label9.TabIndex = 77;
+            this.label9.Text = "Total Ammount";
+            // 
+            // totalammotb
+            // 
+            this.totalammotb.Location = new System.Drawing.Point(206, 672);
+            this.totalammotb.Name = "totalammotb";
+            this.totalammotb.Size = new System.Drawing.Size(139, 22);
+            this.totalammotb.TabIndex = 78;
+            // 
             // PaymentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1230, 506);
+            this.ClientSize = new System.Drawing.Size(1230, 768);
+            this.Controls.Add(this.totalammotb);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.dalydatetb);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.button14);
@@ -397,5 +466,11 @@
         private System.Windows.Forms.Button Test;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox dalydatetb;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox totalammotb;
     }
 }
