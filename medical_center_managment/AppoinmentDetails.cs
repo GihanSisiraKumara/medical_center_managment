@@ -303,5 +303,29 @@ namespace medical_center_managment
             // Optionally, hide the current form if you don't need it anymore
             Visible = false;
         }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            VierOldFemailPatient VierOldFemailPatient = new VierOldFemailPatient();
+
+            // Display the target form
+            VierOldFemailPatient.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            ViewAppoinment ViewAppoinment = new ViewAppoinment();
+
+            // Display the target form
+            ViewAppoinment.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
     }
 }

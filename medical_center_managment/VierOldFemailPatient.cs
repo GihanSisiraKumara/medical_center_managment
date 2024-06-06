@@ -11,52 +11,45 @@ using System.Windows.Forms;
 
 namespace medical_center_managment
 {
-   
-    public partial class SupplyerOrderDetails : Form
+    public partial class VierOldFemailPatient : Form
     {
         string connectionString = @"Data Source=LAPTOP-4VMD8P7I;Initial Catalog=medical_center;Integrated Security=True;";
-        public SupplyerOrderDetails()
+        public VierOldFemailPatient()
         {
             InitializeComponent();
         }
-        public void display_data()
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VierOldFemailPatient_Load(object sender, EventArgs e)
         {
             try
             {
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
+                    // Open the connection
                     sqlCon.Open();
-                    SqlCommand cmd = sqlCon.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "select * from SuplyOrder";
-                    cmd.ExecuteNonQuery();
-                    DataTable dataTable = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dataTable);
-                    dataGridView1.DataSource = dataTable;
+
+                    // Create a SqlDataAdapter to fetch data from the AppointmentDetailsView
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Patient_female_60plus_View", sqlCon);
+
+                    // Create a DataTable to hold the data
+                    DataTable dt = new DataTable();
+
+                    // Fill the DataTable with data from the view
+                    da.Fill(dt);
+
+                    // Bind the DataTable to the DataGridView
+                    dataGridView1.DataSource = dt;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
-        }
-
-        private void SupplyerOrderDetails_Load(object sender, EventArgs e)
-        {
-            display_data();
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            // Create an instance of the target form
-            SupplyerOrderDetails SupplyerOrderDetails = new SupplyerOrderDetails();
-
-            // Display the target form
-            SupplyerOrderDetails.Show();
-
-            // Optionally, hide the current form if you don't need it anymore
-            Visible = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -131,6 +124,18 @@ namespace medical_center_managment
             Visible = false;
         }
 
+        private void button11_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the target form
+            SupplyerOrderDetails SupplyerOrderDetails = new SupplyerOrderDetails();
+
+            // Display the target form
+            SupplyerOrderDetails.Show();
+
+            // Optionally, hide the current form if you don't need it anymore
+            Visible = false;
+        }
+
         private void button12_Click(object sender, EventArgs e)
         {
             // Create an instance of the target form
@@ -141,84 +146,6 @@ namespace medical_center_managment
 
             // Optionally, hide the current form if you don't need it anymore
             Visible = false;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string orderId = ordertb.Text.Trim();
-
-                using (SqlConnection sqlCon = new SqlConnection(connectionString))
-                {
-                    sqlCon.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM SuplyOrder WHERE OrderId = @orderId", sqlCon);
-                    cmd.Parameters.AddWithValue("@orderId", orderId);
-
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        // Highlight the row in the DataGridView
-                        int rowIndex = dataGridView1.Rows.Cast<DataGridViewRow>()
-                                            .Where(row => row.Cells["OrderId"].Value.ToString() == orderId)
-                                            .Select(row => row.Index)
-                                            .FirstOrDefault();
-
-                        if (rowIndex >= 0)
-                        {
-                            dataGridView1.ClearSelection();
-                            dataGridView1.Rows[rowIndex].Selected = true;
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("No matching records found.");
-                    }
-
-                    reader.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message);
-            }
-
-        }
-
-        private void ordertb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string orderId = ordertb.Text.Trim();
-
-                using (SqlConnection sqlCon = new SqlConnection(connectionString))
-                {
-                    sqlCon.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM SuplyOrder WHERE OrderId = @orderId", sqlCon);
-                    cmd.Parameters.AddWithValue("@orderId", orderId);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Order deleted successfully.");
-                        display_data(); // Refresh the DataGridView after deletion
-                    }
-                    else
-                    {
-                        MessageBox.Show("No matching records found.");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message);
-            }
-
         }
 
         private void button13_Click(object sender, EventArgs e)

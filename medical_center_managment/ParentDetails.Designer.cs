@@ -60,6 +60,8 @@
             this.button14 = new System.Windows.Forms.Button();
             this.Test = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -206,7 +208,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Navy;
-            this.label8.Location = new System.Drawing.Point(162, 46);
+            this.label8.Location = new System.Drawing.Point(147, 67);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(199, 32);
             this.label8.TabIndex = 15;
@@ -387,11 +389,35 @@
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button16.Location = new System.Drawing.Point(213, 23);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(102, 34);
+            this.button16.TabIndex = 73;
+            this.button16.Text = "View Appoint";
+            this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button17.Location = new System.Drawing.Point(321, 23);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(88, 34);
+            this.button17.TabIndex = 72;
+            this.button17.Text = "OldPatient";
+            this.button17.UseVisualStyleBackColor = false;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
             // ParentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1497, 671);
+            this.Controls.Add(this.button16);
+            this.Controls.Add(this.button17);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.Test);
@@ -467,6 +493,8 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button Test;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
     }
 }
 

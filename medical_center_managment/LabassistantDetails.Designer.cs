@@ -57,6 +57,8 @@
             this.button14 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.gendertb = new System.Windows.Forms.TextBox();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -314,7 +316,7 @@
             // button14
             // 
             this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button14.Location = new System.Drawing.Point(227, 12);
+            this.button14.Location = new System.Drawing.Point(236, 12);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(86, 34);
             this.button14.TabIndex = 66;
@@ -339,11 +341,35 @@
             this.gendertb.Size = new System.Drawing.Size(135, 22);
             this.gendertb.TabIndex = 68;
             // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button16.Location = new System.Drawing.Point(34, 12);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(102, 34);
+            this.button16.TabIndex = 72;
+            this.button16.Text = "View Appoint";
+            this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button15.Location = new System.Drawing.Point(142, 12);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(88, 34);
+            this.button15.TabIndex = 71;
+            this.button15.Text = "OldPatient";
+            this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
             // LabassistantDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 587);
+            this.Controls.Add(this.button16);
+            this.Controls.Add(this.button15);
             this.Controls.Add(this.gendertb);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button14);
@@ -413,5 +439,7 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox gendertb;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button15;
     }
 }
