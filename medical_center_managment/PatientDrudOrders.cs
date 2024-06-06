@@ -137,7 +137,7 @@ namespace medical_center_managment
                     sqlCon.Open();
                     SqlCommand cmd = sqlCon.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "UPDATE GiveOrders SET OrderDate = @orderDate, TotalCost = @totalCost, OrderDescription = @orderDescription  WHERE PatientID = @patientID OR PaymentID = @paymentID";
+                    cmd.CommandText = "UPDATE GiveOrders SET OrderDate = @orderDate, TotalCost = @totalCost, OrderDescription = @orderDescription, PatientID = @patientID, PaymentID = @paymentID  WHERE PatientID = @patientID OR PaymentID = @paymentID";
                     cmd.Parameters.AddWithValue("@orderDate", ordertb.Text.Trim());
                     cmd.Parameters.AddWithValue("@totalCost", pricetb.Text.Trim());
                     cmd.Parameters.AddWithValue("@orderDescription", descriptiontb.Text.Trim());

@@ -307,5 +307,10 @@ namespace medical_center_managment
         {
             totalammotb.Text = string.Empty;
         }
+
+        private void paytypetb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
