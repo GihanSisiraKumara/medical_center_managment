@@ -1,0 +1,6 @@
+![image](https://github.com/GihanSisiraKumara/medical_center_managment/assets/118829196/9c5e70a0-c08c-44bb-9b22-74232ef3a9fa)
+![image](https://github.com/GihanSisiraKumara/medical_center_managment/assets/118829196/1d1029d9-a712-4677-a2e3-1272c7d1258d)
+![image](https://github.com/GihanSisiraKumara/medical_center_managment/assets/118829196/51ff1231-daae-4bf8-9b7c-f651f662629a)
+![image](https://github.com/GihanSisiraKumara/medical_center_managment/assets/118829196/4b2f9dca-9797-46ac-a69b-4c7acdf1977f)
+![image](https://github.com/GihanSisiraKumara/medical_center_managment/assets/118829196/398ac919-8d23-4fbe-b017-995f1a3293a8)
+![image](https://github.com/GihanSisiraKumara/medical_center_managment/assets/118829196/00fb0ec8-3573-45f3-be36-2983d23e50e2)
